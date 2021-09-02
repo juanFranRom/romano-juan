@@ -1,12 +1,17 @@
-import logo from './logo.svg'
 import './App.css'
-import Header from './Pages/Header/Header'
+import NavBar from './Components/NavBar'
+import ItemListContainer from './Components/ItemListContainer';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-    </div>
+    <>
+      <section className="header">
+        <NavBar/>
+      </section>
+      <section className="body">
+        <ItemListContainer greeting="HOLI!" />
+      </section>
+    </>
   );
 }
 
