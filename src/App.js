@@ -1,16 +1,19 @@
-import './App.css'
-import NavBar from './Components/NavBar'
-import ItemListContainer from './Components/ItemListContainer';
+import { useState } from "react";
+import Body from "./components/Body";
+import NavBar from "./components/NavBar";
+import SideBar from "./components/SideBar";
+import GlobalStyle from "./GlobalStyles";
 
 function App() {
+  const [desplegado, setDesplegado] = useState(false)
+
+  const handleDesplegado = () => { setDesplegado(!desplegado) }
   return (
     <>
-      <section className="header">
-        <NavBar/>
-      </section>
-      <section className="body">
-        <ItemListContainer greeting="HOLI!" />
-      </section>
+      <GlobalStyle/>
+      <NavBar handle={ handleDesplegado }/>
+      <SideBar value={ desplegado } handle={ handleDesplegado }/>
+      <Body/>
     </>
   );
 }

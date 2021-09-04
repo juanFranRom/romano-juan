@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const LogoWrapper = styled.div`
+export const LogoContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +13,7 @@ export const LogoWrapper = styled.div`
         color: #fff;
     }
 
-    & .marca{
+    & span{
         font-size: 20px;
     }
 

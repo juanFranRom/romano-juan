@@ -1,14 +1,20 @@
+import {
+    NavContainer,
+    NavMenu,
+    NavItem,
+    NavBtn,
+    Bars
+} from './elements'
 import Logo from '../Logo'
-import { Nav, NavItem, Bars, NavMenu, NavBtn } from './elements'
+import Button from '../Button'
 import Carrito from '../Carrito'
 
-export default function NavBar() {
+
+export default function NavBar({ handle }) {
     return (
-        <Nav>
-            <NavItem>
-                <Logo/>
-            </NavItem>
-            <Bars/>
+        <NavContainer>
+            <Logo/>
+            <Bars onClick={ handle }/>
             <NavMenu>
                 <NavItem>
                     <a href="#">Cortes</a>
@@ -20,13 +26,14 @@ export default function NavBar() {
                     <a href="#">Elaborados</a>
                 </NavItem>
             </NavMenu>
-            <NavItem>
+            <NavMenu>
                 <NavBtn>
-                    Contacnos
+                    <Button text="Contactanos"/>
                 </NavBtn>
-                <Carrito/>
-            </NavItem>
-        </Nav>
+                <NavItem>
+                    <Carrito/>
+                </NavItem>
+            </NavMenu>
+        </NavContainer>
     )
 }
- 
