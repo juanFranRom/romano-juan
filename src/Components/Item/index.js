@@ -1,20 +1,25 @@
-import { useState } from 'react'
-import { CountWrapper, CountDisplay, Substract, Plus } from './elements'
+import { useState, useEffect } from 'react'
+import { 
+    CountWrapper, 
+    CountDisplay, 
+    Substract, 
+    Plus
+} from './elements'
 import { IconContext } from 'react-icons'
 import Button from '../Button'
 import ErrorMessage from '../ErrorMessage'
 
-export default function ItemCount({ item, stock, initial = 1, onAdd }) {
+export default function Item({ item, initial = 1, onAdd }) {
     const [count, setCount] = useState({
         value: initial,
         error: false
     })
 
-    if(initial > stock)
+    if(initial > item.stock)
         setCount(0)
 
     const sum = () => {
-        count.value < stock
+        count.value < item.stock
         ?
             setCount({
                 value: count.value + 1,
@@ -28,6 +33,17 @@ export default function ItemCount({ item, stock, initial = 1, onAdd }) {
             
     }
 
+    useEffect(() => {
+        setTimeout(() => {
+            setCount(
+                {
+                    ...count,
+                    error: false
+                }
+            )
+        }, 3000);
+    }, [count.error])
+
     const substract = () => {
         count.value > 0 
         && 
@@ -40,7 +56,8 @@ export default function ItemCount({ item, stock, initial = 1, onAdd }) {
     return (
         <IconContext.Provider value={{color: '#000'}}>
             <CountWrapper>
-                <h1>{item}</h1>
+                <h1>{item.name}</h1>
+                <img src={item.image} alt={item.name}/>
                 <CountDisplay>
                     <Substract onClick={ substract } />
                     <input value={ count.value } readOnly/>
@@ -49,7 +66,7 @@ export default function ItemCount({ item, stock, initial = 1, onAdd }) {
                 {
                     count.error && <ErrorMessage text="No hay suficiente stock"/>
                 }
-                <Button text="Agregar al Carrito" onAdd={() => onAdd(count.value, item)}/>
+                <Button text="Agregar al Carrito" onAdd={() => onAdd(count.value, item.name)}/>
             </CountWrapper>
         </IconContext.Provider>
         

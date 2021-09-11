@@ -1,10 +1,7 @@
 import styled from "styled-components"
 
 export const BodyContainer = styled.section`
-    height: 100vh;
-    max-height: 1100px;
     position: relative;
-    overflow: hidden;
 `
 
 export const BodyDisplay = styled.div`

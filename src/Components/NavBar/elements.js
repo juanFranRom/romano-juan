@@ -51,6 +51,8 @@ export const NavItem = styled.div`
 `
 
 export const NavBtn = styled.div`
+    height: 100%;
+    width: 150px;
     display: flex;
     align-items: center;
     margin-right: 50px;

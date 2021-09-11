@@ -1,9 +1,10 @@
 import { LogoContainer } from "./elements"
+import imagen from '../../assets/Images/Logo.png'
 
 export default function Logo() {
     return (
         <LogoContainer>
-            <img src='assets/Images/Logo.png' alt="LOGO"/>
+            <img src={ imagen } alt="LOGO"/>
             <p>Carnes a <span>Rolette</span></p>
         </LogoContainer>
     )
