@@ -31,7 +31,7 @@ export default function ItemListContainer() {
         <List>
             <h1>Productos</h1>
             {
-                loading ? <h2>Cargando</h2> : <ItemList items={data} />
+                loading ? <h2>Cargando</h2> : productos && <ItemList items={productos} />
             }
         </List>
     )

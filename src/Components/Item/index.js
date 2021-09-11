@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { 
     CountWrapper, 
     CountDisplay, 
@@ -10,47 +10,30 @@ import Button from '../Button'
 import ErrorMessage from '../ErrorMessage'
 
 export default function Item({ item, initial = 1, onAdd }) {
-    const [count, setCount] = useState({
-        value: initial,
-        error: false
-    })
+    const [count, setCount] = useState(initial)
+    const [error, setError] = useState(false)
 
     if(initial > item.stock)
         setCount(0)
 
     const sum = () => {
-        count.value < item.stock
+        count < item.stock
         ?
-            setCount({
-                value: count.value + 1,
-                error: false
-            })
+            setCount(count + 1)
         :
-            setCount({
-                value: count.value,
-                error: true
-            })
+            setError(true)
             
     }
 
-    useEffect(() => {
+    if(error === true)
         setTimeout(() => {
-            setCount(
-                {
-                    ...count,
-                    error: false
-                }
-            )
-        }, 3000);
-    }, [count.error])
+            setError(false)
+        }, 3000)
 
     const substract = () => {
-        count.value > 0 
+        count > 0 
         && 
-        setCount({
-            value: count.value - 1,
-            error: false
-        })
+        setCount(count - 1)
     }
 
     return (
@@ -60,13 +43,13 @@ export default function Item({ item, initial = 1, onAdd }) {
                 <img src={item.image} alt={item.name}/>
                 <CountDisplay>
                     <Substract onClick={ substract } />
-                    <input value={ count.value } readOnly/>
+                    <input value={ count } readOnly/>
                     <Plus onClick={ sum } />
                 </CountDisplay>
                 {
-                    count.error && <ErrorMessage text="No hay suficiente stock"/>
+                    error && <ErrorMessage text="No hay suficiente stock"/>
                 }
-                <Button text="Agregar al Carrito" onAdd={() => onAdd(count.value, item.name)}/>
+                <Button text="Agregar al Carrito" onAdd={() => onAdd(count, item.name)}/>
             </CountWrapper>
         </IconContext.Provider>
         

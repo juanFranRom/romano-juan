@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { FaBars } from 'react-icons/fa'
-import { AiOutlineClose as Close } from 'react-icons/ai'
 
 export const NavContainer = styled.nav`
     background-color: rgb(139, 39, 39);
