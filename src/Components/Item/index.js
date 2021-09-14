@@ -1,57 +1,20 @@
-import { useState } from 'react'
 import { 
     CountWrapper, 
-    CountDisplay, 
-    Substract, 
-    Plus
+    ItemDetail, 
 } from './elements'
 import { IconContext } from 'react-icons'
-import Button from '../Button'
-import ErrorMessage from '../ErrorMessage'
+import Count from '../Count'
 
-export default function Item({ item, initial = 1, onAdd }) {
-    const [count, setCount] = useState(initial)
-    const [error, setError] = useState(false)
-
-    if(initial > item.stock)
-        setCount(0)
-
-    const sum = () => {
-        count < item.stock
-        ?
-            setCount(count + 1)
-        :
-            setError(true)
-            
-    }
-
-    if(error === true)
-        setTimeout(() => {
-            setError(false)
-        }, 3000)
-
-    const substract = () => {
-        count > 0 
-        && 
-        setCount(count - 1)
-    }
-
+export default function Item({ item, initial = 1, onAdd, handleDetail }) {
     return (
         <IconContext.Provider value={{color: '#000'}}>
             <CountWrapper>
-                <h1>{item.name}</h1>
-                <img src={item.image} alt={item.name}/>
-                <CountDisplay>
-                    <Substract onClick={ substract } />
-                    <input value={ count } readOnly/>
-                    <Plus onClick={ sum } />
-                </CountDisplay>
-                {
-                    error && <ErrorMessage text="No hay suficiente stock"/>
-                }
-                <Button text="Agregar al Carrito" onAdd={() => onAdd(count, item.name)}/>
+                <ItemDetail onClick={() => handleDetail(item.id)}>
+                    <h1>{item.name}</h1>
+                    <img src={item.image} alt={item.name}/>
+                </ItemDetail>
+                <Count item={item} onAdd={onAdd}/>
             </CountWrapper>
         </IconContext.Provider>
-        
     )
 }

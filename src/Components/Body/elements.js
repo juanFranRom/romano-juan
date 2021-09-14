@@ -1,7 +1,9 @@
 import styled from "styled-components"
 
 export const BodyContainer = styled.section`
-    position: relative;
+    height: 100%;
+    width: 100%;
+    margin-top: 90px;
 `
 
 export const BodyDisplay = styled.div`

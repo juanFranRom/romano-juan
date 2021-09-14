@@ -17,13 +17,13 @@ export default function NavBar({ handle }) {
             <Bars onClick={ handle }/>
             <NavMenu>
                 <NavItem>
-                    <a href="#">Cortes</a>
+                    <a href="/">Cortes</a>
                 </NavItem>
                 <NavItem>
-                    <a href="#">Embutidos</a>
+                    <a href="/">Embutidos</a>
                 </NavItem>
                 <NavItem>
-                    <a href="#">Elaborados</a>
+                    <a href="/node_modules">Elaborados</a>
                 </NavItem>
             </NavMenu>
             <NavMenu>

@@ -9,5 +9,5 @@ export const List = styled.div`
     font-weight: 900;
     font-size: 50px;
     width: 100%;
-    margin-top: 90px;
+    margin: 20px;
 `

@@ -1,4 +1,4 @@
-import { LogoCart } from './Elements'
+import { LogoCart } from './elements'
 
 export default function Carrito() {
     return (

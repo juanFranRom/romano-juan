@@ -4,8 +4,8 @@ import { AiOutlineClose as Close } from 'react-icons/ai'
 export const SideBarContainer = styled.div`
     background-color: rgb(139, 39, 39);
     height: 100vh;
-    width: 250px;
-    position: absolute;
+    width: 100%;
+    position: fixed;
     top: 0;
     right: -100%;
     z-index: 2;
@@ -21,7 +21,7 @@ export const SideBarContainer = styled.div`
 `
 
 export const SideBarMenu = styled.div`
-    margin-top: 90px;
+    padding-top: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,12 +30,12 @@ export const SideBarMenu = styled.div`
 export const SideBarItem = styled.div`
     width: 95%;
     height: 60px;
-    padding: 12px 22px; 
+    padding: 50px 22px; 
     font-size: 16px;
     font-weight: 500;
     color: white;
     text-decoration: none;
-    text-align: end;
+    text-align: center;
     cursor: pointer;
 
     &:hover{
