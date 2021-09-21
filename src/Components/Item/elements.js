@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link as RouterLink } from "react-router-dom"
 
 export const CountWrapper = styled.div`
     display: flex;
@@ -30,6 +31,7 @@ export const CountWrapper = styled.div`
 
     & h1{
         font-size: 19px;
+        color: black;
     }
 `
 export const ItemDetail = styled.div`
@@ -39,4 +41,9 @@ export const ItemDetail = styled.div`
     align-items: center;
     gap: 1rem;
     cursor: pointer;
+`
+
+export const Link = styled(RouterLink)`
+    text-decoration: none;
+    width: 100%;
 `

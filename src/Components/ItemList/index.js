@@ -3,7 +3,7 @@ import {
 } from './elements'
 import Item from '../Item'
 
-export const ItemList = ({ items, handleDetail }) => {
+export const ItemList = ({ items }) => {
     return (
         <List>
             {
@@ -11,7 +11,6 @@ export const ItemList = ({ items, handleDetail }) => {
                     <Item 
                         key={producto.id} 
                         item={producto} 
-                        handleDetail={handleDetail} 
                     />
                 )
             }

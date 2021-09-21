@@ -1,6 +1,5 @@
 import styled from "styled-components"
-import { BsPlus } from 'react-icons/bs'
-import { GrFormSubtract } from 'react-icons/gr'
+import { TiPlus, TiMinus } from 'react-icons/ti'
 
 export const CountWrapper = styled.div`
     width: 100%;
@@ -19,6 +18,7 @@ export const CountDisplay = styled.div`
     border-radius: 4px;
     padding: 10px 5px;
     width: 90%;
+    color: black;
 
     & input{
         border: none;
@@ -28,12 +28,12 @@ export const CountDisplay = styled.div`
     }
 `
 
-export const Substract = styled(GrFormSubtract)`
+export const Substract = styled(TiMinus)`
     font-size: 1rem;
     cursor: pointer;
 `
 
-export const Plus = styled(BsPlus)`
+export const Plus = styled(TiPlus)`
     font-size: 1rem;
     cursor: pointer;
 `

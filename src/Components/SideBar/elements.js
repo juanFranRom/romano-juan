@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { AiOutlineClose as Close } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 
 export const SideBarContainer = styled.div`
     background-color: rgb(139, 39, 39);
@@ -25,16 +26,13 @@ export const SideBarMenu = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 `
 
 export const SideBarItem = styled.div`
     width: 95%;
     height: 60px;
     padding: 50px 22px; 
-    font-size: 16px;
-    font-weight: 500;
-    color: white;
-    text-decoration: none;
     text-align: center;
     cursor: pointer;
 
@@ -52,4 +50,17 @@ export const Cruz = styled(Close)`
     font-size: 1.8rem;
     cursor: pointer;
     color: #fff;
+`
+
+export const NavLink = styled(Link)`
+    width: 80%;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover{
+        color: rgb(254,191,24, 1);
+    }
 `

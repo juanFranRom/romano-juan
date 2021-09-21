@@ -2,6 +2,7 @@ import {
     NavContainer,
     NavMenu,
     NavItem,
+    NavLink,
     NavBtn,
     Bars
 } from './elements'
@@ -13,25 +14,37 @@ import Carrito from '../Carrito'
 export default function NavBar({ handle }) {
     return (
         <NavContainer>
-            <Logo/>
+            <NavLink to="/">
+                <Logo/>
+            </NavLink>
             <Bars onClick={ handle }/>
             <NavMenu>
                 <NavItem>
-                    <a href="/">Cortes</a>
+                    <NavLink to="/category/cortes">
+                        Cortes
+                    </NavLink>
                 </NavItem>
                 <NavItem>
-                    <a href="/">Embutidos</a>
+                    <NavLink to="/category/achuras-embutidos">
+                        Achuras y Embutidos
+                    </NavLink>
                 </NavItem>
                 <NavItem>
-                    <a href="/node_modules">Elaborados</a>
+                    <NavLink to="/category/elaborados">
+                        Elaborados
+                    </NavLink>
                 </NavItem>
             </NavMenu>
             <NavMenu>
-                <NavBtn>
-                    <Button text="Contactanos"/>
-                </NavBtn>
+                <NavLink to='/'>
+                    <NavBtn>
+                        <Button text="Contactanos"/>
+                    </NavBtn>
+                </NavLink>
                 <NavItem>
-                    <Carrito/>
+                    <NavLink to="/cart">
+                        <Carrito/>
+                    </NavLink>
                 </NavItem>
             </NavMenu>
         </NavContainer>

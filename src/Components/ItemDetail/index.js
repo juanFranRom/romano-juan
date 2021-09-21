@@ -3,7 +3,8 @@ import {
     ImgContainer,
     Detail,
     Precio,
-    CountWrapper
+    CountWrapper,
+    Linea
 } from "./elements"
 import Count from '../Count'
 
@@ -13,6 +14,7 @@ const ItemDetail = ({ item }) => {
             <ImgContainer>
                 <img src={item.image} alt='logo'/>
             </ImgContainer>
+            <Linea/>
             <Detail>
                 <h1>{item.name}</h1>
                 <p>{item.detail}</p>

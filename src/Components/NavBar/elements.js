@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { FaBars } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 export const NavContainer = styled.nav`
     background-color: rgb(139, 39, 39);
@@ -34,19 +35,6 @@ export const NavItem = styled.div`
     padding: 0 1rem;
     height: 100%;
     cursor: pointer;
-
-    & a{
-        font-size: 16px;
-        font-weight: 500;
-        color: white;
-        text-decoration: none;
-    }
-
-    &:hover{
-        & a{
-            color: rgb(254,191,24, 1);
-        }
-    }
 `
 
 export const NavBtn = styled.div`
@@ -73,5 +61,16 @@ export const Bars = styled(FaBars)`
         transform: translate(-100%, 100%);
         font-size: 1.8rem;
         cursor: pointer;
+    }
+`
+
+export const NavLink = styled(Link)`
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+
+    &:hover{
+        color: rgb(254,191,24, 1);
     }
 `
