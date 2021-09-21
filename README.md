@@ -1,6 +1,6 @@
 # Proyecto E-Commerce CoderHouse
 
-Este es el repositorio de mi proyecto del curso de React de CoderHouse. El mismo es el E-comerce de una carniceria llamada "carnes A Rolette" que se encuentra en la provincia de San Luis, en su capital.
+Este es el repositorio de mi proyecto del curso de React de CoderHouse. El mismo es el E-comerce de una carniceria llamada "carnes A Rolette" que se encuentra en la provincia de San Luis, Argentina.
 
 # Desafios cumplidos hasta la fecha 20/09
 
