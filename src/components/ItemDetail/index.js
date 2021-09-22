@@ -1,14 +1,24 @@
+import { useState } from "react"
 import { 
     DetailContainer,
     ImgContainer,
     Detail,
     Precio,
     CountWrapper,
-    Linea
+    Linea,
+    CartLink,
+    Descripcion
 } from "./elements"
 import Count from '../Count'
 
 const ItemDetail = ({ item }) => {
+    const [compra, setCompra] = useState(null)
+
+    const handleCompra = (item, cantidad) => {
+        setCompra({item: item, cantidad: cantidad})
+    }
+
+    console.log(compra);
     return (
         <DetailContainer>
             <ImgContainer>
@@ -16,14 +26,22 @@ const ItemDetail = ({ item }) => {
             </ImgContainer>
             <Linea/>
             <Detail>
-                <h1>{item.name}</h1>
-                <p>{item.detail}</p>
+                <Descripcion>
+                    <h1>{item.name}</h1>
+                    <p>{item.detail}</p>
+                </Descripcion>
                 <Precio>
                     <span className="precio">{`$${item.price}`}</span><span className="kg">POR KG</span>
                 </Precio>
-                <CountWrapper>
-                    <Count item={item}/>
-                </CountWrapper>
+                    {
+                        compra 
+                        ? 
+                            <CartLink to="/cart">Ir a Carrito</CartLink> 
+                        : 
+                            <CountWrapper>
+                                <Count item={item} onAdd={handleCompra}/>
+                            </CountWrapper>
+                    }
             </Detail>
         </DetailContainer>
     )

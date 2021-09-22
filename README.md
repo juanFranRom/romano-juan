@@ -10,4 +10,5 @@ Este es el repositorio de mi proyecto del curso de React de CoderHouse. El mismo
  - Contador con botón
  - Catálogo con MAPS y Promises
  - Detalle de Producto
- - Primera Entrega del Proyecto Final: Routing y Navegación (Pendiente)
+ - Primera Entrega del Proyecto Final: Routing y Navegación
+ - Sincronizar Counter (Pendiente)

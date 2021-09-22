@@ -8,7 +8,7 @@ import{
 import ErrorMessage from '../ErrorMessage'
 import Button from '../Button'
 
-const Count = ({ item, initial = 1}) => {
+const Count = ({ item, initial = 1, onAdd}) => {
     const [count, setCount] = useState(initial)
     const [error, setError] = useState(false)
 
@@ -44,7 +44,7 @@ const Count = ({ item, initial = 1}) => {
             {
                 error && <ErrorMessage text="No hay suficiente stock"/>
             }
-            <Button text="Agregar al Carrito" onAdd={(count, item) => alert(`¡Se agrego ${count} ${item} a su carrito!`)}/>
+            <Button text="Agregar al Carrito" onAdd={() => onAdd(item, count)}/>
         </CountWrapper>
     )
 }
