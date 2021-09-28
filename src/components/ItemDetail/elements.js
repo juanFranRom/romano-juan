@@ -5,7 +5,7 @@ export const DetailContainer = styled.div`
     width: 90%;
     height: 70%;
     background-color: white;
-    border-radius: 30px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.5);
@@ -27,7 +27,7 @@ export const ImgContainer = styled.div`
     & img{
         width: 100%;
         height: 370px;
-        border-radius: 30px;
+        border-radius: 10px;
     }
 
     @media screen and (max-width: 768px){

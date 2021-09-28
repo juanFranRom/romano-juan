@@ -8,7 +8,7 @@ import{
 import ErrorMessage from '../ErrorMessage'
 import Button from '../Button'
 
-const Count = ({ item, initial = 1, onAdd}) => {
+const Count = ({ item, initial = 1, onAdd }) => {
     const [count, setCount] = useState(initial)
     const [error, setError] = useState(false)
 

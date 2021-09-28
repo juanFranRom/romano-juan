@@ -10,15 +10,17 @@ import {
     Descripcion
 } from "./elements"
 import Count from '../Count'
+import { useCartContext } from "../../context/CartContext"
 
 const ItemDetail = ({ item }) => {
-    const [compra, setCompra] = useState(null)
+    const [compra, setCompra] = useState(false)
+    const { addItem } = useCartContext()
 
     const handleCompra = (item, cantidad) => {
-        setCompra({item: item, cantidad: cantidad})
+        addItem(item, cantidad)
+        setCompra(!compra)
     }
 
-    console.log(compra);
     return (
         <DetailContainer>
             <ImgContainer>

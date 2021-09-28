@@ -3,10 +3,10 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
 import GlobalStyle from "./GlobalStyles";
-import Cart from './components/Cart'
+import { Cart } from './components/Cart'
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import { CartContext } from './context/CartContext'
+import { CartContextProvider } from "./context/CartContext";
 
 function App() {
   const [desplegado, setDesplegado] = useState(false)
@@ -14,8 +14,8 @@ function App() {
   const handleDesplegado = () => { setDesplegado(!desplegado) }
   return (
     <>
-      <CartContext.Provider value={null}>
-        <BrowserRouter>
+      <BrowserRouter>
+        <CartContextProvider>
           <GlobalStyle/>
           <NavBar handle={ handleDesplegado }/>
           <SideBar value={ desplegado } handle={ handleDesplegado }/>
@@ -33,8 +33,8 @@ function App() {
               <Cart/>
             </Route>
           </Switch>
-        </BrowserRouter>
-      </CartContext.Provider>
+        </CartContextProvider>
+      </BrowserRouter>
     </>
   );
 }
