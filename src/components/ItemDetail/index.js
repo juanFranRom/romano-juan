@@ -38,7 +38,7 @@ const ItemDetail = ({ item }) => {
                     {
                         compra 
                         ? 
-                            <CartLink to="/cart">Ir a Carrito</CartLink> 
+                            <CartLink to="/cart">Terminar Compra</CartLink> 
                         : 
                             <CountWrapper>
                                 <Count item={item} onAdd={handleCompra}/>

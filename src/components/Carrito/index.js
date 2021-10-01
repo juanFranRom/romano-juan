@@ -1,9 +1,20 @@
-import { LogoCart } from './elements'
+import { useCartContext } from '../../context/CartContext'
+import { 
+    LogoCart,
+    CartContainer,
+    QuantityCart
+} from './elements'
 
 export default function Carrito() {
+    const { cartLength } = useCartContext()
+    let valor = cartLength()
+
     return (
         <>
-            <LogoCart/>
+            <CartContainer>
+                <LogoCart/>
+                <QuantityCart>{valor === 0 ? "" : valor}</QuantityCart>
+            </CartContainer>
         </>
     )
 }

@@ -11,7 +11,12 @@ const GlobalStyle = createGlobalStyle`
     html, body{
         overflow-x: hidden;
         width: 100%;
-        height: 100vh;
+        min-height: 100vh;
+        height: 100%;
+    }
+
+    #root{
+        height: 100%;
     }
 `
 
