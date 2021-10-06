@@ -38,7 +38,7 @@ export const Cart = () => {
                                     return(
                                         <CartItem key={index}>
                                             <Item>
-                                                <img src={item.image} alt={item.name}/>
+                                                <img src={`${process.env.PUBLIC_URL}/assets/Images/${item.image}`} alt={item.name}/>
                                                 <div>
                                                     <h3>{item.name}</h3>
                                                     <p>{`${quantity} Kg`}</p>

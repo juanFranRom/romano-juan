@@ -24,7 +24,7 @@ const ItemDetail = ({ item }) => {
     return (
         <DetailContainer>
             <ImgContainer>
-                <img src={item.image} alt='logo'/>
+                <img src={`${process.env.PUBLIC_URL}/assets/Images/${item.image}`} alt='logo'/>
             </ImgContainer>
             <Linea/>
             <Detail>

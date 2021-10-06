@@ -5,8 +5,8 @@ import {
     Container
 } from './elements'
 import {
-    getProducto
-} from '../../helpers'
+    getItem
+} from '../../helpers/firebase'
 import Overlay from '../Overlay'
 import Loading from '../Loading'
 
@@ -17,16 +17,9 @@ export const ItemDetailContainer = () => {
     const { idItem } = useParams()
 
     useEffect(() => {
-        getProducto(idItem)
-        .then(result => {
-            setProducto(result)
-        })
-        .catch(err => {
-            console.log(err)
-        })
-        .finally(() => {
-            setLoadingProducto(false)
-        })
+        getItem(idItem)
+        .then(data => setProducto(data))
+        .finally(() => setLoadingProducto(false))
     }, [idItem])
 
     return (

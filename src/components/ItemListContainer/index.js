@@ -5,8 +5,9 @@ import { ItemList } from '../ItemList'
 import Loading from '../Loading'
 import Overlay from '../Overlay'
 import {
-    getProductos
-} from '../../helpers'
+    getItems,
+    getCategory
+} from '../../helpers/firebase'
 
 const titles = [
     {
@@ -35,18 +36,23 @@ export default function ItemListContainer(){
 
     useEffect(() => {
         setLoadingProductos(true)
-        getProductos(idCategory)
-        .then(result => {
-            setProductos(result)
-        })
-        .catch(err => {
-            console.log(err)
-        })
-        .finally(() => {
-            setLoadingProductos(false)
-        })
+        if(idCategory)
+        {
+            getCategory( idCategory )
+            .then(data => setProductos(data))
+            .finally(() => setLoadingProductos(false))
+        }
+        else
+        {
+            getItems()
+            .then(data => setProductos(data))
+            .finally(() => setLoadingProductos(false))
+        }
     }, [idCategory])
 
+
+    console.log(productos);
+    
     return (
         <List>
             <p className="title">{ idCategory ? getTitle(idCategory): "Productos"}</p>
