@@ -14,7 +14,6 @@ export const CartContainer = styled.div`
 
 export const CartDisplay = styled.div`
     width: 80%;
-    height: 70vh;
     background-color: white;
     border-radius: 10px;
     display: flex;
