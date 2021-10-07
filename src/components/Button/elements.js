@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const ButtonContainer = styled.button`
     width: 80%;
-    background-color: rgb(254, 191, 24, 0.8);
+    background-color: ${(props) => props.color === 'yellow' ? 'rgb(254, 191, 24, 0.8)' : 'rgb(139, 39, 39)'};
     border: none;
     outline: none;
     box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.5) ;
@@ -17,6 +17,6 @@ export const ButtonContainer = styled.button`
 
     &:hover{
         transform: translateY(-1px);
-        color: rgb(139, 39, 39);
+        color: ${(props) => props.color === 'yellow' ? 'rgb(139, 39, 39)' :  'rgb(254, 191, 24)'};
     }
 `

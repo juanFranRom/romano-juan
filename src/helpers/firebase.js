@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app'
-import { getFirestore, collection, getDocs, doc, getDoc, query, where } from 'firebase/firestore/lite'
+import { getFirestore, collection, getDocs, doc, getDoc, query, where, addDoc, Timestamp } from 'firebase/firestore'
 
 const firebaseConfig = {
     apiKey: "AIzaSyAiUgMOjFgWV47pGJsuEpYaMh_U5Sn_4-w",
@@ -11,6 +11,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+
 
 const db = getFirestore(app);
 
@@ -40,4 +41,13 @@ export const getCategory = async ( category ) => {
         return {id: doc.id, ...doc.data()}
     })
     return result;
+}
+
+export const createOrder = async ( order ) => {
+    const docRef = await addDoc(collection(db, "Order"), {
+        ...order,
+        date: Timestamp.fromDate(new Date("December 10, 1815"))
+    });
+    
+    return docRef
 }

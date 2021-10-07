@@ -13,6 +13,7 @@ export const CartContainer = styled.div`
 `
 
 export const CartDisplay = styled.div`
+    min-height: 70vh;
     width: 80%;
     background-color: white;
     border-radius: 10px;
@@ -107,4 +108,14 @@ export const ButtonLink = styled(Link)`
     &:hover{
         color: rgb(254,191,24, 1);
     }
+`
+
+export const FormDisplay = styled.div`
+    min-height: 70vh;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 `

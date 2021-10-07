@@ -50,8 +50,6 @@ export default function ItemListContainer(){
         }
     }, [idCategory])
 
-
-    console.log(productos);
     
     return (
         <List>
