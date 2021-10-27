@@ -25,8 +25,9 @@ export const Cart = () => {
     const [loadingTicket, setLoadingTicket] = useState(false)
     const [isShopping, setIsShopping] = useState(true)
     const [user, setUser] = useState({})
-    const { cart, removeItem, cartLength, cartTotal, clear } = useCartContext()
+    const { cart, removeItem, cartRealLength, cartTotal, clear } = useCartContext()
     
+
     const handleUser = event => {
         setUser({
             ...user,
@@ -42,8 +43,7 @@ export const Cart = () => {
         removeItem(id)
     }
 
-    const handleOrder = event => {
-        event.preventDefault()
+    const handleOrder = () => {
         const order = {
             buyer:{
                 ...user
@@ -63,14 +63,12 @@ export const Cart = () => {
         createOrder(order)
         .then(data => {
             setIdTicket(data.id)
-            console.log(data.id)
         })
         .finally(() => clear())
     }
 
-    let lenCart = cartLength()
+    let lenCart = cartRealLength()
 
-    console.log(user);
     return (
         <CartContainer>
             <CartDisplay>
@@ -118,12 +116,12 @@ export const Cart = () => {
                                 :
                                     <EmptyCart>
                                         <div>
-                                            <h1>¡Tu carrito esta vacio!</h1>
+                                            <h1>¡Tu carrito está vacío!</h1>
                                             <p>¡Miles de productos te esperan!</p>
                                         </div>
                                         <ButtonContainer>
                                             <ButtonLink to='/'>
-                                                <Button text={"Segui Comprando"}/>
+                                                <Button text={"Seguí comprando"}/>
                                             </ButtonLink>
                                         </ButtonContainer>
                                     </EmptyCart>
@@ -143,7 +141,7 @@ export const Cart = () => {
                         <EmptyCart>
                             <div>
                                 <h1>¡Ya ha finalizado de procesarse tu compra!</h1>
-                                <p>Podras tener un seguimiento de la misma con tu ticket "{idTicket}"</p>
+                                <p>Podrás tener un seguimiento de la misma con tu ticket "{idTicket}"</p>
                             </div>
                             <ButtonContainer>
                                 <ButtonLink to='/'>

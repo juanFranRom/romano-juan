@@ -21,6 +21,14 @@ export const CartDisplay = styled.div`
     flex-direction: column;
     box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.5);
     padding: 0 5%;
+
+    @media screen and (max-width: 480px){
+        width: 90%;
+    }
+
+    @media screen and (max-width: 420px){
+        width: 95%;
+    }
 `
 
 export const CartItem = styled.div`
@@ -88,6 +96,17 @@ export const EmptyCart = styled.div`
 
     & p{
         font-size: 22px;
+        font-weight: 500;
+    }
+
+    @media screen and (max-width: 780px){
+        & p{
+            font-size: 16px;
+        }
+
+        & h1{
+            font-size: 22px;
+        }
     }
 `
 

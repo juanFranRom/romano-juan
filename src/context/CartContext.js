@@ -9,6 +9,12 @@ export const CartContextProvider = ({ children }) => {
 
     const cartLength = () => cart.length
 
+    const cartRealLength = () => cart.reduce((storage, item) => 
+    {
+        storage += item.quantity;
+        return storage; 
+    }, 0);
+
     const isInCart = (id) => {
         let isIn = -1
 
@@ -67,7 +73,8 @@ export const CartContextProvider = ({ children }) => {
             removeItem,
             cartLength,
             clear,
-            cartTotal
+            cartTotal,
+            cartRealLength
         }}>
             { children }
         </CartContext.Provider>

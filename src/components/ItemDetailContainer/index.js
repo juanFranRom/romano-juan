@@ -18,7 +18,9 @@ export const ItemDetailContainer = () => {
 
     useEffect(() => {
         getItem(idItem)
-        .then(data => setProducto(data))
+        .then(data => {
+            setProducto(data)
+        })
         .finally(() => setLoadingProducto(false))
     }, [idItem])
 
@@ -32,7 +34,15 @@ export const ItemDetailContainer = () => {
                         <Loading color="rgb(254, 191, 24)"/> 
                     </>
                 : 
-                    <ItemDetail item={ producto }/>
+                    <>
+                        {
+                            Object.keys(producto).length > 1
+                            ?
+                                <ItemDetail item={ producto }/>
+                            :
+                                <ItemDetail/>
+                        }
+                    </>
             }
         </Container>
     )

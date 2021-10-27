@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const FormWrapper = styled.form`
+    padding: 30px;
+    width: 90%;
+    height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,6 +11,16 @@ export const FormWrapper = styled.form`
     text-align: center;
     gap: 2rem;
     color: rgb(139,39,39);
+
+    @media screen and (max-width: 560px){
+        & h1{
+            font-size: 24px;
+        }
+
+        & h2{
+            font-size: 16px;
+        }
+    }
 `
 
 export const InputWrapper = styled.div`
@@ -35,12 +48,14 @@ export const InputWrapper = styled.div`
 `
 
 export const SubmitWrapper = styled.div`
-    width: 50%;
+    width: 250px;
 `
 export const CancelWrapper = styled.div`
-    width: 50%;
+    width: 250px;
 `
 export const ButtonsWrapper = styled.div`
-    width: 500px;
+    width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: center;
 `

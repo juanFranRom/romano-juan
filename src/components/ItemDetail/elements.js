@@ -8,6 +8,7 @@ export const DetailContainer = styled.div`
     border-radius: 10px;
     display: flex;
     align-items: center;
+    justify-content: center;
     box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.5);
 
     @media screen and (max-width: 768px){
@@ -132,4 +133,39 @@ export const CartLink = styled(Link)`
 
 export const Descripcion = styled.div`
     width: 100%;
+`
+
+export const EmptyDetail = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(139,39,39);
+    gap: 50px;
+    height: 70vh;
+
+    & p{
+        font-size: 22px;
+    }
+`
+
+
+export const ButtonContainer = styled.div`
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
+export const ButtonLink = styled(Link)`
+    width: 200px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+
+    &:hover{
+        color: rgb(254,191,24, 1);
+    }
 `
