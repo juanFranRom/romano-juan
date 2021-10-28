@@ -138,3 +138,12 @@ export const FormDisplay = styled.div`
     justify-content: center;
     flex-direction: column;
 `
+
+export const ItemDescription = styled.div`
+    height: 100px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    font-size: 18px;
+`

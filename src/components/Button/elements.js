@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const ButtonContainer = styled.button`
-    width: 80%;
+    width: 100%;
     background-color: ${(props) => props.color === 'yellow' ? 'rgb(254, 191, 24, 0.8)' : 'rgb(139, 39, 39)'};
     border: none;
     outline: none;
@@ -18,5 +18,9 @@ export const ButtonContainer = styled.button`
     &:hover{
         transform: translateY(-1px);
         color: ${(props) => props.color === 'yellow' ? 'rgb(139, 39, 39)' :  'rgb(254, 191, 24)'};
+    }
+
+    @media screen and (max-width: 620px){
+        height: 80px;
     }
 `

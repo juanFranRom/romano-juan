@@ -5,7 +5,7 @@ import {
     FormWrapper,
     InputWrapper,
     SubmitWrapper,
-    CancelWrapper,
+    ButtonLink,
     ButtonsWrapper
 } from './elements'
 
@@ -55,9 +55,9 @@ export const Form = ({ handleUser, handleIsShopping, endShopping }) => {
                 </InputWrapper>
                 <ErrorMessage text={error}/>
                 <ButtonsWrapper>
-                    <CancelWrapper>
+                    <ButtonLink to={'/'}>
                         <Button type={'none'} text='Seguir Comprando' color={'red'} onAdd={handleIsShopping}/>
-                    </CancelWrapper>
+                    </ButtonLink>
                     <SubmitWrapper>
                         <Button type={'submit'} text='Finalizar Compra'/>
                     </SubmitWrapper>

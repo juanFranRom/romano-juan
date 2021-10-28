@@ -11,7 +11,8 @@ import {
     ButtonContainer,
     SubmitItem,
     ButtonLink,
-    FormDisplay
+    FormDisplay,
+    ItemDescription
 } from './elements'
 import { useCartContext } from '../../context/CartContext'
 import Button from '../Button'
@@ -35,9 +36,9 @@ export const Cart = () => {
         })
     }
 
-    const handleIsShopping = () => {
+    /*const handleIsShopping = () => {
         setIsShopping(!isShopping)
-    }
+    }*/
 
     const handleRemove = (id) => {
         removeItem(id)
@@ -91,10 +92,13 @@ export const Cart = () => {
                                                         <CartItem key={index}>
                                                             <Item>
                                                                 <img src={`${process.env.PUBLIC_URL}/assets/Images/${item.image}`} alt={item.name}/>
-                                                                <div>
-                                                                    <h3>{item.name}</h3>
-                                                                    <p>{`${quantity} Kg`}</p>
-                                                                </div>
+                                                                <ItemDescription>
+                                                                    <div>
+                                                                        <h3>{item.name}</h3>
+                                                                        <p>{`${quantity} Kg`}</p>
+                                                                    </div>
+                                                                    <p>{`${item.price} $`}</p>
+                                                                </ItemDescription>
                                                             </Item>
                                                             <Precio>
                                                                 <Eliminar onClick={() => handleRemove(item.id)}/>
@@ -127,7 +131,7 @@ export const Cart = () => {
                                     </EmptyCart>
                             :   
                                 <FormDisplay>
-                                    <Form handleUser={handleUser} handleIsShopping={handleIsShopping} endShopping={handleOrder}/>
+                                    <Form handleUser={handleUser} endShopping={handleOrder}/>
                                 </FormDisplay>
                         }
                     </>

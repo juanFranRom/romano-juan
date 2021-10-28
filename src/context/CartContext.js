@@ -1,11 +1,13 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useState, useEffect } from 'react'
 
 const CartContext = createContext([])
 
 export const useCartContext = () => useContext(CartContext)
 
 export const CartContextProvider = ({ children }) => {
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState(window.sessionStorage.getItem('cart') ? JSON.parse(window.sessionStorage.getItem('cart')) : [])
+
+    console.log(cart);
 
     const cartLength = () => cart.length
 
@@ -65,6 +67,13 @@ export const CartContextProvider = ({ children }) => {
 
         return total
     }
+
+    useEffect(() => {
+        if(cart.length > 0)
+            window.sessionStorage.setItem('cart', JSON.stringify(cart))
+        else if(window.sessionStorage.getItem('cart'))
+            window.sessionStorage.removeItem('cart')
+    }, [cart])
 
     return (
         <CartContext.Provider value={{
